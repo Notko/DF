@@ -231,11 +231,17 @@ input:active, input:focus {
   color: rgba(0, 0, 0, 0.325);
 }
 .main .post-card .post-card__header .post-card__label {
+  text-decoration: none;
   color: #5447C8;
   border-radius: 0.75rem;
   padding: 0.25rem 0.5rem;
   border: 1px solid rgba(84, 71, 200, 0.1);
   background-color: rgba(84, 71, 200, 0.15);
+  transition: background-color ease-in-out 0.1s;
+}
+.main .post-card .post-card__header .post-card__label:focus, .main .post-card .post-card__header .post-card__label:hover {
+  border: 1px solid rgba(84, 71, 200, 0.2);
+  background-color: rgba(84, 71, 200, 0.25);
 }
 @media screen and (max-width: 300px) {
   .main .post-card .post-card__header .post-card__label {

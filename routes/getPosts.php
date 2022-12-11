@@ -19,7 +19,7 @@ foreach ($posts as $post) {
                 <span class="post-card__date">' . date("d. m. Y", strtotime($post->date_created)) . '</span>
             </div>
             <div>
-                <span class="post-card__label">' . (($post->topic_title) ?: "") . '</span>
+                <a class="post-card__label" href="topic.php?topic_id=' . $post->topics_id . '">' . (($post->topic_title) ?: "") . '</a>
             </div>
         </div>
         <div class="post-card__content">' . $post->content . '</div>
