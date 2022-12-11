@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="cs">
+<html lang="cs" class="login">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -11,7 +11,26 @@
     <link rel="stylesheet" href="style.css">
     <title>Login | Diskuzní Fórum</title>
 </head>
-<body>
-
+<body class="login">
+<main class="login-page">
+    <section class="login-page__main">
+        <h2 class="login-page__heading">Vítejte zpět</h2>
+        <p class="login-page__heading-paragraph">Vítejte! Zadejte své přihlašovací údaje prosím.</p>
+        <form class="login-page__form">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Zadejte svůj email"/>
+            <label for="password">Heslo</label>
+            <input type="password" id="password" placeholder="●●●●●●●●"/>
+            <a href="#" class="login-page__forgotten-password">Zapomenuté heslo</a>
+            <input type="submit" value="Přihlásit se">
+        </form>
+        <p class="login-page__no-account">Nemáte účet? <a href="#">Registrujte se</a></p>
+    </section>
+    <aside class="login-page__decorative">
+        <a href="index.php">
+            <img src="img/logoipsum-287.svg" alt="Decorative Element">
+        </a>
+    </aside>
+</main>
 </body>
 </html>
