@@ -49,7 +49,7 @@ class postController
     public function getPost(int $id): array
     {
         try {
-            $stmt = $this->conn->prepare("SELECT heading, content, date_created, username, topics_id, title, AS 'topic_title' FROM df_posts LEFT JOIN df_users ON df_posts.users_id = df_users.id LEFT JOIN df_topics ON df_posts.topics_id = df_topics.id WHERE df_posts.id = :id");
+            $stmt = $this->conn->prepare("SELECT heading, content, date_created, username, topics_id, title AS 'topic_title' FROM df_posts LEFT JOIN df_users ON df_posts.users_id = df_users.id LEFT JOIN df_topics ON df_posts.topics_id = df_topics.id WHERE df_posts.id = :id");
             $stmt->bindParam(':id', $id);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_OBJ);
