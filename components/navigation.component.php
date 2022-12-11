@@ -48,4 +48,4 @@
         <li class="nav__item"><a href="register.php">Registrace</a></li>
     </ul>
 </nav>
-<script src="/js/hamburger_nav.js"></script>
+<script src="js/hamburger_nav.js"></script>
