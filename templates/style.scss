@@ -288,7 +288,7 @@ input {
   }
 }
 
-.login {
+.login, .register {
   background: $color--white;
 
   &-page {
@@ -319,7 +319,7 @@ input {
     &__heading {
       font-weight: 500;
       font-size: 3rem;
-      margin: 0;
+      margin: 2rem 0 0;
 
       &-paragraph {
         font-size: 1.125rem;
@@ -357,6 +357,7 @@ input {
         background-color: $color--primary;
         cursor: pointer;
         transition: background-color ease-in-out .1s;
+        margin-top: 1rem;
 
         &:focus, &:hover {
           background-color: darken($color--primary, 20%);
@@ -365,12 +366,13 @@ input {
     }
 
     &__forgotten-password {
-      margin: 1rem 0;
-      text-align: right;
+      margin: 1rem 0 0;
+      align-self: end;
     }
 
     &__no-account {
-      text-align: center;
+      align-self: center;
+      margin-bottom: 2rem;
     }
 
     &__decorative {

@@ -242,90 +242,92 @@ input:active, input:focus {
   font-size: 1.1rem;
 }
 
-.login {
+.login, .register {
   background: #FFFFFF;
 }
-.login-page {
+.login-page, .register-page {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.login-page__main {
+.login-page__main, .register-page__main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
   width: clamp(350px, 30vw, 500px);
 }
-.login-page a {
+.login-page a, .register-page a {
   text-decoration: none;
   color: #5447C8;
   transition: color ease-in-out 0.1s;
 }
-.login-page a:focus, .login-page a:hover {
+.login-page a:focus, .login-page a:hover, .register-page a:focus, .register-page a:hover {
   outline: none;
   text-decoration: underline;
   color: #302782;
 }
-.login-page__heading {
+.login-page__heading, .register-page__heading {
   font-weight: 500;
   font-size: 3rem;
-  margin: 0;
+  margin: 2rem 0 0;
 }
-.login-page__heading-paragraph {
+.login-page__heading-paragraph, .register-page__heading-paragraph {
   font-size: 1.125rem;
   color: #4a4a4a;
 }
-.login-page__form {
+.login-page__form, .register-page__form {
   display: flex;
   flex-direction: column;
 }
-.login-page__form label {
+.login-page__form label, .register-page__form label {
   margin: 1rem 0 0.25rem;
   font-size: 1.075rem;
   color: #303030;
 }
-.login-page__form input:not([type=submit]) {
+.login-page__form input:not([type=submit]), .register-page__form input:not([type=submit]) {
   outline: 1px solid rgba(84, 71, 200, 0.2);
   font-size: 1.125rem;
   background-color: #FFFFFF;
 }
-.login-page__form input:not([type=submit])::placeholder {
+.login-page__form input:not([type=submit])::placeholder, .register-page__form input:not([type=submit])::placeholder {
   color: #303030;
 }
-.login-page__form input:not([type=submit]):active, .login-page__form input:not([type=submit]):focus {
+.login-page__form input:not([type=submit]):active, .login-page__form input:not([type=submit]):focus, .register-page__form input:not([type=submit]):active, .register-page__form input:not([type=submit]):focus {
   outline: 1px solid rgba(84, 71, 200, 0.8);
 }
-.login-page__form input[type=submit] {
+.login-page__form input[type=submit], .register-page__form input[type=submit] {
   color: #FFFFFF;
   font-size: 1.125rem;
   background-color: #5447C8;
   cursor: pointer;
   transition: background-color ease-in-out 0.1s;
+  margin-top: 1rem;
 }
-.login-page__form input[type=submit]:focus, .login-page__form input[type=submit]:hover {
+.login-page__form input[type=submit]:focus, .login-page__form input[type=submit]:hover, .register-page__form input[type=submit]:focus, .register-page__form input[type=submit]:hover {
   background-color: #302782;
 }
-.login-page__forgotten-password {
-  margin: 1rem 0;
-  text-align: right;
+.login-page__forgotten-password, .register-page__forgotten-password {
+  margin: 1rem 0 0;
+  align-self: end;
 }
-.login-page__no-account {
-  text-align: center;
+.login-page__no-account, .register-page__no-account {
+  align-self: center;
+  margin-bottom: 2rem;
 }
-.login-page__decorative {
+.login-page__decorative, .register-page__decorative {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #e6e6e6;
 }
-.login-page__decorative a {
+.login-page__decorative a, .register-page__decorative a {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
 }
-.login-page__decorative img {
+.login-page__decorative img, .register-page__decorative img {
   width: 40%;
 }
 
