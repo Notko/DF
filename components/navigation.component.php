@@ -39,9 +39,13 @@
     <label class="nav__search-label">
         <input type="text" name="nav__search-input" class="nav__search-input" placeholder="Hledat téma"/>
     </label>
+    <a href="#" class="nav__hamburger">
+        <i class="fa-solid fa-bars"></i>
+    </a>
     <ul class="nav__list">
         <li class="nav__item"><a href="#">Témata</a></li>
-        <li class="nav__item"><a href="#">Příhlášení</a></li>
-        <li class="nav__item"><a href="#">Registrace</a></li>
+        <li class="nav__item"><a href="login.php">Příhlášení</a></li>
+        <li class="nav__item"><a href="register.php">Registrace</a></li>
     </ul>
 </nav>
+<script src="/js/hamburger_nav.js"></script>
