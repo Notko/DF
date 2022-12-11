@@ -68,6 +68,7 @@ input:active, input:focus {
   display: none;
   font-size: 2rem;
   color: #5447C8;
+  z-index: 2;
 }
 .nav .nav__hamburger:hover, .nav .nav__hamburger:active, .nav .nav__hamburger:focus {
   color: #302782;
@@ -119,6 +120,29 @@ input:active, input:focus {
 }
 @media screen and (max-width: 720px) {
   .nav .nav__list {
+    display: none;
+  }
+  .nav .nav__list.active {
+    padding: 0;
+    display: block;
+    position: absolute;
+    background-color: #FFFFFF;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+  }
+  .nav .nav__list.active li:first-of-type {
+    padding-top: 8rem;
+  }
+  .nav .nav__list.active .nav__item a {
+    padding: 1.5rem 0;
+  }
+  .nav .nav__list.active .nav__item a:hover, .nav .nav__list.active .nav__item a:focus, .nav .nav__list.active .nav__item a.active {
+    color: #303030;
+    outline: none;
+  }
+  .nav .nav__list.active .nav__item a:hover:after, .nav .nav__list.active .nav__item a:focus:after, .nav .nav__list.active .nav__item a.active:after {
     display: none;
   }
 }

@@ -74,6 +74,7 @@ input {
     display: none;
     font-size: 2rem;
     color: $color--primary;
+    z-index: 2;
 
     &:hover, &:active, &:focus {
       color: darken($color--primary, 20%);
@@ -133,6 +134,34 @@ input {
 
     @media screen and (max-width: 720px) {
       display: none;
+
+      &.active {
+        padding: 0;
+        display: block;
+        position: absolute;
+        background-color: $color--white;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+
+        li:first-of-type{
+          padding-top: 8rem;
+        }
+
+        .nav__item a {
+          padding: 1.5rem 0;
+
+          &:hover, &:focus, &.active {
+            color: $color--dark;
+            outline: none;
+
+            &:after {
+              display: none;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -236,7 +265,7 @@ input {
         border: 1px solid transparentize($color--primary, 0.90);
         background-color: transparentize($color--primary, 0.85);
 
-        @media screen and (max-width: 300px){
+        @media screen and (max-width: 300px) {
           display: none;
         }
       }
@@ -300,8 +329,8 @@ input {
       fill: $color--white;
     }
 
-    @media screen and (max-width: 500px){
-      .footer__logo{
+    @media screen and (max-width: 500px) {
+      .footer__logo {
         display: none;
       }
     }
@@ -311,7 +340,7 @@ input {
     display: flex;
     align-items: center;
 
-    @media screen and (max-width: 400px){
+    @media screen and (max-width: 400px) {
       flex-direction: column;
     }
 
@@ -333,7 +362,7 @@ input {
         font-size: 1.5rem;
       }
 
-      @media screen and (max-width: 400px){
+      @media screen and (max-width: 400px) {
         flex-direction: row;
       }
     }
