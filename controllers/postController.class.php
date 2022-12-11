@@ -57,4 +57,24 @@ class postController
             return [];
         }
     }
+
+    /**
+     *
+     * Return all posts based on topic
+     * @param int $topic_id
+     * @return array
+     *
+     */
+
+    public function getPostsByTopic(int $topic_id): array
+    {
+        try {
+            $stmt = $this->conn->prepare("SELECT df_posts.id, heading, content, date_created, username, title AS 'topic_title' FROM df_posts LEFT JOIN df_users ON df_posts.users_id = df_users.id LEFT JOIN df_topics ON df_posts.topics_id = df_topics.id WHERE df_posts.topics_id = :id");
+            $stmt->bindParam(':id', $topic_id);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        } catch (PDOException $e) {
+            return [];
+        }
+    }
 }
