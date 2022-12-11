@@ -21,6 +21,17 @@ input, button {
   font-size: 1rem;
 }
 
+input {
+  background-color: #f9f9f9;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  padding: 1rem;
+  border: none;
+}
+input:active, input:focus {
+  outline: 1px solid #afa9e5;
+}
+
 .nav {
   display: flex;
   align-items: center;
@@ -38,14 +49,7 @@ input, button {
 .nav .nav__search-label .nav__search-input {
   height: 3rem;
   min-width: 16rem;
-  border: none;
-  background-color: #f9f9f9;
-  border-radius: 0.75rem;
   padding: 0 1rem;
-  font-size: 1rem;
-}
-.nav .nav__search-label .nav__search-input:active, .nav .nav__search-label .nav__search-input:focus {
-  outline: 1px solid #afa9e5;
 }
 .nav .nav__list {
   display: flex;
@@ -95,14 +99,9 @@ input, button {
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.005);
 }
 .main .main__new-post label .main__new-post-input {
-  padding: 1rem;
   width: 40vw;
-  background-color: #FFFFFF;
-  border: none;
   border-radius: 1rem;
-}
-.main .main__new-post label .main__new-post-input:active, .main .main__new-post label .main__new-post-input:focus {
-  outline: 1px solid #afa9e5;
+  background-color: #FFFFFF;
 }
 .main .main__new-post label .main__new-post-button {
   position: absolute;

@@ -27,6 +27,18 @@ input, button {
   font-size: 1rem;
 }
 
+input {
+  background-color: darken($color--white, 2.5%);
+  border-radius: .75rem;
+  font-size: 1rem;
+  padding: 1rem;
+  border: none;
+
+  &:active, &:focus {
+    outline: 1px solid lighten($color--primary, 25%);
+  }
+}
+
 .nav {
   display: flex;
   align-items: center;
@@ -46,15 +58,7 @@ input, button {
     .nav__search-input {
       height: 3rem;
       min-width: 16rem;
-      border: none;
-      background-color: darken($color--white, 2.5%);
-      border-radius: .75rem;
       padding: 0 1rem;
-      font-size: 1rem;
-
-      &:active, &:focus {
-        outline: 1px solid lighten($color--primary, 25%);
-      }
     }
   }
 
@@ -106,20 +110,15 @@ input, button {
 
   .main__new-post {
     margin-top: 4rem;
+
     label {
       position: relative;
       box-shadow: 2px 2px 10px rgba(0, 0, 0, .005);
 
       .main__new-post-input {
-        padding: 1rem;
         width: 40vw;
-        background-color: $color--white;
-        border: none;
         border-radius: 1rem;
-
-        &:active, &:focus {
-          outline: 1px solid lighten($color--primary, 25%);
-        }
+        background-color: $color--white;
       }
 
       .main__new-post-button {
