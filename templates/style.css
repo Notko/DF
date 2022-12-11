@@ -4,6 +4,19 @@
   font-family: "Source Sans Pro", sans-serif;
 }
 
+::-webkit-scrollbar {
+  width: 4px;
+  background-color: #e6e6e6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5447C8;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #302782;
+}
+
 li {
   list-style: none;
 }
