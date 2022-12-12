@@ -43,7 +43,14 @@
         <i class="fa-solid fa-bars"></i>
     </a>
     <ul class="nav__list">
-        <li class="nav__item"><a href="#">Témata</a></li>
+        <li class="nav__item nav__item--dropdown">
+            <a href="#">Témata <i class="fa-solid fa-caret-down"></i></a>
+            <ul class="nav__item--dropdown-list">
+                <li class="nav__item--dropdown-item"><a href="#">MoDEEs</a></li>
+                <li class="nav__item--dropdown-item"><a href="#">Requesty</a></li>
+                <li class="nav__item--dropdown-item"><a href="#">Backend</a></li>
+            </ul>
+        </li>
         <li class="nav__item"><a href="login.php">Příhlášení</a></li>
         <li class="nav__item"><a href="register.php">Registrace</a></li>
     </ul>
