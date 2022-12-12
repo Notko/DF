@@ -14,6 +14,7 @@
 <body class="register">
 <main class="register-page">
     <section class="register-page__main">
+        <a href="index.php" class="register-page__back"><i class="fa-solid fa-angle-left"></i></a>
         <h2 class="register-page__heading">Vítejte</h2>
         <p class="register-page__heading-paragraph">Vítejte! Zadejte své údaje pro registraci prosím.</p>
         <form class="register-page__form">

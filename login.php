@@ -14,6 +14,7 @@
 <body class="login">
 <main class="login-page">
     <section class="login-page__main">
+        <a href="index.php" class="login-page__back"><i class="fa-solid fa-angle-left"></i></a>
         <h2 class="login-page__heading">Vítejte zpět</h2>
         <p class="login-page__heading-paragraph">Vítejte! Zadejte své přihlašovací údaje prosím.</p>
         <form class="login-page__form">

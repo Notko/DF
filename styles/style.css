@@ -364,6 +364,17 @@ input:active, input:focus {
   text-decoration: underline;
   color: #302782;
 }
+.login-page__back, .register-page__back {
+  font-size: 3rem;
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+}
+@media screen and (min-width: 1100px) {
+  .login-page__back, .register-page__back {
+    display: none;
+  }
+}
 .login-page__heading, .register-page__heading {
   font-weight: 500;
   font-size: 3rem;
