@@ -44,8 +44,8 @@
             <li class="footer__socials-item"><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
         </ul>
         <ul class="footer__nav">
-            <li class="footer__nav-item"><a href="#">Registrace</a></li>
-            <li class="footer__nav-item"><a href="#">Přihlášení</a></li>
+            <li class="footer__nav-item"><a href="register.php">Registrace</a></li>
+            <li class="footer__nav-item"><a href="login.php">Přihlášení</a></li>
         </ul>
     </section>
 </footer>
