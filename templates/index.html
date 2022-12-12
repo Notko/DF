@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
           integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Diskuzní Fórum</title>
 </head>
 <body>
@@ -55,7 +55,14 @@
         <i class="fa-solid fa-bars"></i>
     </a>
     <ul class="nav__list">
-        <li class="nav__item"><a href="#">Témata</a></li>
+        <li class="nav__item nav__item--dropdown">
+            <a href="#">Témata <i class="fa-solid fa-caret-down"></i></a>
+            <ul class="nav__item--dropdown-list">
+                <li class="nav__item--dropdown-item"><a href="#">MoDEEs</a></li>
+                <li class="nav__item--dropdown-item"><a href="#">Requesty</a></li>
+                <li class="nav__item--dropdown-item"><a href="#">Backend</a></li>
+            </ul>
+        </li>
         <li class="nav__item"><a href="#">Příhlášení</a></li>
         <li class="nav__item"><a href="#">Registrace</a></li>
     </ul>
