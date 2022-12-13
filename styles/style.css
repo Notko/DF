@@ -476,7 +476,7 @@ input:active, input:focus {
     display: none;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 520px) {
   .login-page__main, .register-page__main {
     width: 80%;
   }
@@ -485,6 +485,7 @@ input:active, input:focus {
   }
   .login-page__form label, .register-page__form label {
     align-self: start;
+    margin-left: 0.5rem;
   }
   .login-page__heading, .register-page__heading {
     align-self: center;

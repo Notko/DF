@@ -555,7 +555,7 @@ input {
     }
   }
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 520px) {
 
     &-page {
       &__main {
@@ -567,6 +567,7 @@ input {
 
         label {
           align-self: start;
+          margin-left: .5rem;
         }
       }
 
