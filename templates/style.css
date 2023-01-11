@@ -45,6 +45,32 @@ input:active, input:focus {
   outline: 1px solid #afa9e5;
 }
 
+.toast {
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  background-color: #5447C8;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  color: #FFFFFF;
+  cursor: default;
+  user-select: none;
+  animation: fadein 0.5s;
+}
+@keyframes fadein {
+  from {
+    top: -10rem;
+    opacity: 0;
+  }
+  to {
+    top: 1rem;
+    opacity: 1;
+  }
+}
+.toast--danger {
+  background-color: #DC3545;
+}
+
 .nav {
   display: flex;
   align-items: center;

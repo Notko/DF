@@ -9,7 +9,7 @@ if (isset($_POST['registerSubmit'])) {
         header('Location: login.php');
     }
     if ($response['status'] == 422) {
-        echo $response['message'];
+        $error = $response['message'];
     }
 }
 
@@ -30,6 +30,11 @@ if (isset($_POST['registerSubmit'])) {
 </head>
 <body class="register">
 <main class="register-page">
+    <?php
+    if (isset($error)) {
+        echo '<span class="toast toast--danger">' . $error . '</span>';
+    }
+    ?>
     <section class="register-page__main">
         <a href="index.php" class="register-page__back"><i class="fa-solid fa-angle-left"></i></a>
         <h2 class="register-page__heading">Vítejte</h2>
