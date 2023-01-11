@@ -18,8 +18,8 @@
         <h2 class="login-page__heading">Vítejte zpět</h2>
         <p class="login-page__heading-paragraph">Vítejte! Zadejte své přihlašovací údaje prosím.</p>
         <form class="login-page__form">
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Zadejte svůj email"/>
+            <label for="username">Uživatelské jméno</label>
+            <input type="text" id="username" placeholder="Zadejte své uživatelské jméno"/>
             <label for="password">Heslo</label>
             <input type="password" id="password" placeholder="●●●●●●●●"/>
             <a href="#" class="login-page__forgotten-password">Zapomenuté heslo</a>
