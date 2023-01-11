@@ -25,7 +25,7 @@ foreach ($posts as $post) {
         <div class="post-card__content">' . $post->content . '</div>
         <a href="#" class="post-card__reply">
             <i class="fa-solid fa-comment"></i>
-            <span>Odpovědět</span>
+            <span>Komentáře</span>
         </a>
     </article>
     ';
