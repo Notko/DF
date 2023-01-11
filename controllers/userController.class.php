@@ -67,4 +67,28 @@ class userController
             return [];
         }
     }
+
+    public function loginUser(string $username, string $password): array
+    {
+        if (!($username && $password)) return ['status' => 422, 'message' => 'Prosím vyplňte všechna pole!'];
+
+        try {
+            $stmt = $this->conn->prepare("SELECT id, password_hash, username FROM df_users WHERE username = :username");
+            $stmt->bindParam('username', $username);
+            $stmt->execute();
+
+            $userdata = $stmt->fetch(PDO::FETCH_OBJ);
+
+            if (!$userdata || !password_verify($password, $userdata->password_hash)) {
+                return ['status' => 403, 'message' => 'Chybné přihlašovací údaje!'];
+            } else {
+                $_SESSION['username'] = $username;
+                $_SESSION['userID'] = $userdata->id;
+                return ['status' => 200];
+            }
+
+        } catch (PDOException $e) {
+            return [];
+        }
+    }
 }

@@ -1,3 +1,17 @@
+<?php
+require_once('controllers/userController.class.php');
+
+if (isset($_POST['loginSubmit'])) {
+    $user = new userController();
+    $response = $user->loginUser($_POST['username'], $_POST['password']);
+    if ($response['status'] == 200) {
+        header('Location: index.php');
+    }
+    if ($response['status'] == 422 || 403) {
+        $error = $response['message'];
+    }
+}
+?>
 <!doctype html>
 <html lang="cs" class="login">
 <head>
@@ -13,17 +27,22 @@
 </head>
 <body class="login">
 <main class="login-page">
+    <?php
+    if (isset($error)) {
+        echo '<span class="toast toast--danger">' . $error . '</span>';
+    }
+    ?>
     <section class="login-page__main">
         <a href="index.php" class="login-page__back"><i class="fa-solid fa-angle-left"></i></a>
         <h2 class="login-page__heading">Vítejte zpět</h2>
         <p class="login-page__heading-paragraph">Vítejte! Zadejte své přihlašovací údaje prosím.</p>
-        <form class="login-page__form">
+        <form class="login-page__form" action="login.php" method="post">
             <label for="username">Uživatelské jméno</label>
-            <input type="text" id="username" placeholder="Zadejte své uživatelské jméno"/>
+            <input type="text" id="username" name="username" placeholder="Zadejte své uživatelské jméno" required/>
             <label for="password">Heslo</label>
-            <input type="password" id="password" placeholder="●●●●●●●●"/>
+            <input type="password" id="password" name="password" placeholder="●●●●●●●●" required/>
             <a href="#" class="login-page__forgotten-password">Zapomenuté heslo</a>
-            <input type="submit" value="Přihlásit se">
+            <input type="submit" value="Přihlásit se" name="loginSubmit">
         </form>
         <p class="login-page__no-account">Nemáte účet? <a href="register.php">Registrujte se</a></p>
     </section>
