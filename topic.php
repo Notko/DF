@@ -14,7 +14,7 @@
 <body>
 
 <?php
-include "components/navigation.component.php"
+include "navigation.component.php"
 ?>
 
 <main class="main">
@@ -28,7 +28,7 @@ include "components/navigation.component.php"
 
 
 <?php
-include "components/footer.component.php"
+include "footer.component.php"
 ?>
 </body>
 <script src="js/getPostsByTopic.js"></script>
