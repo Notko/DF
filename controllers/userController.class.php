@@ -21,7 +21,20 @@ class userController
         }
     }
 
-    public function registerUser($name, $surname, $username, $email, $password, $password_confirm)
+
+    /**
+     *
+     * Register user
+     * @param string $name
+     * @param string $surname
+     * @param string $username
+     * @param string $email
+     * @param string $password
+     * @param string $password_confirm
+     * @return array
+     *
+     */
+    public function registerUser(string $name, string $surname, string $username, string $email, string $password, string $password_confirm): array
     {
         if (!($name && $surname && $username && $email && $password && $password_confirm)) return ['status' => 422, 'message' => 'Prosím vyplňte všechna pole!'];
         if ($password != $password_confirm) return ['status' => 422, 'message' => 'Hesla se neshodují!'];
