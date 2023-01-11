@@ -216,7 +216,7 @@ input {
 .main {
   color: #001A45;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   padding-top: 5rem;
   gap: 2rem;
@@ -224,6 +224,7 @@ input {
 
   .main__new-post {
     margin-top: 4rem;
+    order: 1;
 
     label {
       position: relative;
