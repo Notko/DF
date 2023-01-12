@@ -58,13 +58,13 @@ class userController
 
                     return ['status' => 200];
                 } catch (PDOException $e) {
-                    return [];
+                    return ['status' => 500];
                 }
             } else {
                 return ['status' => 422, 'message' => 'Uživatel s tímto uživatelským jménem již existuje!'];
             }
         } catch (PDOException $e) {
-            return [];
+            return ['status' => 500];
         }
     }
 
@@ -88,7 +88,7 @@ class userController
             }
 
         } catch (PDOException $e) {
-            return [];
+            return ['status' => 500];
         }
     }
 }
