@@ -14,7 +14,7 @@ class userController
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         );
         try {
-            $this->conn = new PDO($dsn, $user, $pass, $options);
+            $this->conn = new PDO($dsn, $username, $pass, $options);
         } catch (PDOException $e) {
             echo "Nelze se připojit k MySQL: ";
             echo $e->getMessage();
@@ -68,6 +68,15 @@ class userController
         }
     }
 
+
+    /**
+     *
+     * Login user
+     * @param string $username
+     * @param string $password
+     * @return array
+     *
+     */
     public function loginUser(string $username, string $password): array
     {
         if (!($username && $password)) return ['status' => 422, 'message' => 'Prosím vyplňte všechna pole!'];
@@ -90,5 +99,20 @@ class userController
         } catch (PDOException $e) {
             return ['status' => 500];
         }
+    }
+
+    /**
+     *
+     * Logout user
+     *
+     */
+    public function logoutUser()
+    {
+        session_destroy();
+        session_unset();
+        unset($_SESSION['username']);
+        unset($_SESSION['userID']);
+        header('Location: index.php');
+        exit();
     }
 }

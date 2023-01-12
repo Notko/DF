@@ -1,4 +1,4 @@
 <?php
 $dbname = "brauemi";
-$user = "brauemi";
+$username = "brauemi";
 $pass = "brauemi3";

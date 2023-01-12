@@ -14,7 +14,7 @@ class postController
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         );
         try {
-            $this->conn = new PDO($dsn, $user, $pass, $options);
+            $this->conn = new PDO($dsn, $username, $pass, $options);
         } catch (PDOException $e) {
             echo "Nelze se připojit k MySQL: ";
             echo $e->getMessage();

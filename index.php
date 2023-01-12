@@ -1,3 +1,7 @@
+<?php
+require_once 'start.config.php';
+print_r($_SESSION);
+?>
 <!doctype html>
 <html lang="cs">
 <head>

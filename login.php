@@ -1,4 +1,5 @@
 <?php
+require_once 'start.config.php';
 require_once('controllers/userController.class.php');
 
 if (isset($_POST['loginSubmit'])) {
