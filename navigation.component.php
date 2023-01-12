@@ -46,9 +46,6 @@
         <li class="nav__item nav__item--dropdown">
             <a href="#">Témata <i class="fa-solid fa-caret-down"></i></a>
             <ul class="nav__item--dropdown-list">
-<!--                <li class="nav__item--dropdown-item"><a href="#">MoDEEs</a></li>
-                <li class="nav__item--dropdown-item"><a href="#">Requesty</a></li>
-                <li class="nav__item--dropdown-item"><a href="#">Backend</a></li>-->
                 <?php include "routes/getTopics.php" ?>
             </ul>
         </li>
