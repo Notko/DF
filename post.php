@@ -1,8 +1,9 @@
 <?php
-    if(empty($_GET['id'])){
-        header("Location: index.php");
-        die();
-    };
+if (empty($_GET['id'])) {
+    header("Location: index.php");
+    die();
+};
+require_once('start.config.php');
 ?>
 
 <!doctype html>
@@ -25,7 +26,7 @@ include "navigation.component.php"
 ?>
 
 <main class="main">
-
+    <?php include 'routes/getPost.php'; ?>
 </main>
 
 
@@ -35,6 +36,6 @@ include "footer.component.php"
 
 </body>
 
-<script src="js/getPost.js"></script>
+<!--<script src="js/getPost.js"></script>-->
 
 </html>

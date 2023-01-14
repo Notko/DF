@@ -1,3 +1,8 @@
+<?php
+require_once('start.config.php');
+
+?>
+
 <!doctype html>
 <html lang="cs">
 <head>
@@ -24,6 +29,7 @@ include "navigation.component.php"
             <button class="main__new-post-button"><i class="fa-solid fa-plus"></i></button>
         </label>
     </form>
+    <?php include 'routes/getPostsByTopic.php'; ?>
 </main>
 
 
@@ -31,5 +37,5 @@ include "navigation.component.php"
 include "footer.component.php"
 ?>
 </body>
-<script src="js/getPostsByTopic.js"></script>
+<!--<script src="js/getPostsByTopic.js"></script>-->
 </html>

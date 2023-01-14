@@ -3,9 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once "controllers/topicController.class.php";
-$topics = new topicController();
-$topics = $topics->getAllTopics();
+$topics = $topic->getAllTopics();
 
 //echo '<pre>' . json_encode($topics, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) . '</pre>';
 

@@ -1,6 +1,6 @@
 <?php
 require_once 'start.config.php';
-print_r($_SESSION);
+//print_r($_SESSION);
 ?>
 <!doctype html>
 <html lang="cs">
@@ -28,6 +28,7 @@ include "navigation.component.php"
             <button class="main__new-post-button"><i class="fa-solid fa-plus"></i></button>
         </label>
     </form>
+    <?php include 'routes/getPosts.php'?>
 </main>
 
 
@@ -35,5 +36,5 @@ include "navigation.component.php"
 include "footer.component.php"
 ?>
 </body>
-<script src="js/getPosts.js"></script>
+<!--<script src="js/getPosts.js"></script>-->
 </html>

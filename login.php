@@ -1,9 +1,7 @@
 <?php
 require_once 'start.config.php';
-require_once('controllers/userController.class.php');
 
 if (isset($_POST['loginSubmit'])) {
-    $user = new userController();
     $response = $user->loginUser($_POST['username'], $_POST['password']);
     if ($response['status'] == 200) {
         header('Location: index.php');

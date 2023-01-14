@@ -5,11 +5,7 @@ error_reporting(E_ALL);
 
 if(!isset($_GET['topic_id'])) return;
 
-require_once "../controllers/postController.class.php";
-$posts = new postController();
-$posts = $posts->getPostsByTopic(intval($_GET['topic_id']));
-
-//echo '<pre>' . json_encode($posts, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) . '</pre>';
+$posts = $post->getPostsByTopic(intval($_GET['topic_id']));
 
 foreach ($posts as $post) {
     echo '

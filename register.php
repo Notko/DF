@@ -1,9 +1,8 @@
 <?php
 
-require_once('controllers/userController.class.php');
+require_once('start.config.php');
 
 if (isset($_POST['registerSubmit'])) {
-    $user = new userController();
     $response = $user->registerUser($_POST['name'], $_POST['surname'], $_POST['username'], $_POST['email'], $_POST['password'], $_POST['password-again']);
     if ($response['status'] == 200) {
         header('Location: login.php');

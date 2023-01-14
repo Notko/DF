@@ -1,11 +1,8 @@
 <?php
 if(!isset($_GET['id'])) return;
 
-require_once "../controllers/postController.class.php";
-$posts = new postController();
-$posts = $posts->getPost(intval($_GET['id']));
-
-//echo '<pre>' . json_encode($posts, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) . '</pre>';
+require_once "controllers/postController.class.php";
+$posts = $post->getPost(intval($_GET['id']));
 
 foreach ($posts as $post) {
     echo '

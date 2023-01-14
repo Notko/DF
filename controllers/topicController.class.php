@@ -4,21 +4,9 @@ class topicController
 {
     public PDO $conn;
 
-    public function __construct()
+    public function __construct($pdo)
     {
-        require_once "config/db.php";
-        //$dsn = "mysql:host=lab.uzlabina.cz;dbname=$dbname;port=3306";
-        $dsn = "mysql:host=localhost;dbname=$dbname;port=3336";
-        $options = array(
-            PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-        );
-        try {
-            $this->conn = new PDO($dsn, $username, $pass, $options);
-        } catch (PDOException $e) {
-            echo "Nelze se připojit k MySQL: ";
-            echo $e->getMessage();
-        }
+        $this->conn = $pdo;
     }
 
     /**

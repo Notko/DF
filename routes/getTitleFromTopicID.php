@@ -1,8 +1,6 @@
 <?php
 if(!isset($_GET['id'])) return;
 
-require_once "controllers/topicController.class.php";
-$topic = new topicController();
 $topic = $topic->getTitleFromID($_GET['id']);
 
 echo $topic[0]->title;

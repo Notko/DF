@@ -3,11 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once "../controllers/postController.class.php";
-$posts = new postController();
-$posts = $posts->getPosts();
-
-//echo '<pre>' . json_encode($posts, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) . '</pre>';
+$posts = $post->getPosts();
 
 foreach ($posts as $post) {
     echo '
