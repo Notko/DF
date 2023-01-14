@@ -118,6 +118,17 @@ input:active, input:focus {
   display: flex;
   margin: 0;
 }
+.nav .nav__list .nav__item .nav__username {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  padding: 1.5rem;
+  position: relative;
+  font-size: 1.125rem;
+  color: #9E9E9E;
+  font-weight: 500;
+  text-decoration: none;
+}
 .nav .nav__list .nav__item a {
   text-align: center;
   display: inline-block;

@@ -49,8 +49,20 @@
                 <?php include "routes/getTopics.php" ?>
             </ul>
         </li>
-        <li class="nav__item"><a href="login.php">Příhlášení</a></li>
-        <li class="nav__item"><a href="register.php">Registrace</a></li>
+        <?php
+            if(isset($_SESSION['username'])){
+                echo '
+                    <li class="nav__item"><span class="nav__username">' . strtoupper($_SESSION['username']) .  '</span></li>
+                    <li class="nav__item"><a href="logout.php">Odhlásit se</a></li>
+                ';
+            }
+            else{
+                echo '
+                    <li class="nav__item"><a href="login.php">Příhlášení</a></li>
+                    <li class="nav__item"><a href="register.php">Registrace</a></li>
+                ';
+            }
+        ?>
     </ul>
 </nav>
 <script src="js/hamburger_nav.js"></script>
