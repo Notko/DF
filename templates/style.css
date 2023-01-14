@@ -225,6 +225,7 @@ input:active, input:focus {
 }
 .main .main__new-post {
   margin-top: 4rem;
+  margin-bottom: -4rem;
   order: 1;
 }
 .main .main__new-post label {
@@ -265,6 +266,9 @@ input:active, input:focus {
   border-radius: 1rem;
   background-color: #FFFFFF;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.005);
+}
+.main .post-card:last-of-type {
+  margin-top: 4rem;
 }
 @media screen and (max-width: 1100px) {
   .main .post-card {
