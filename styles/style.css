@@ -45,6 +45,10 @@ input:active, input:focus {
   outline: 1px solid #afa9e5;
 }
 
+.hidden {
+  display: none;
+}
+
 .toast {
   position: fixed;
   right: 1rem;
@@ -223,10 +227,74 @@ input:active, input:focus {
   gap: 2rem;
   padding-bottom: 12rem;
 }
+.main .button {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  border: none;
+  background-color: #5447C8;
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color ease-in-out 0.1s;
+}
+.main .button:focus, .main .button:hover {
+  background-color: #302782;
+}
+.main .button--close {
+  background-color: #DC3545;
+}
+.main .button--close:focus, .main .button--close:hover {
+  background-color: #921925;
+}
+.main .main__new-post-button {
+  position: absolute;
+  right: 1rem;
+  top: -0.6rem;
+}
 .main .main__new-post {
   margin-top: 4rem;
   margin-bottom: -4rem;
   order: 1;
+}
+.main .main__new-post .new-post-title {
+  max-width: 40vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@media screen and (max-width: 1100px) {
+  .main .main__new-post .new-post-title {
+    max-width: 70vw;
+  }
+}
+.main .main__new-post-controls {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main .main__new-post-controls .button:last-of-type {
+  margin-left: 0.5rem;
+}
+.main .main__new-post-controls .main__new-post-title {
+  width: 25rem;
+  border-radius: 1rem;
+  background-color: #FFFFFF;
+}
+@media screen and (max-width: 1300px) {
+  .main .main__new-post-controls .main__new-post-title {
+    width: 20rem;
+  }
+}
+@media screen and (max-width: 650px) {
+  .main .main__new-post-controls {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .main .main__new-post-controls .main__new-post-title {
+    width: calc(70vw);
+  }
 }
 .main .main__new-post label {
   position: relative;
@@ -242,22 +310,13 @@ input:active, input:focus {
     width: 70vw;
   }
 }
-.main .main__new-post label .main__new-post-button {
-  position: absolute;
-  right: 1rem;
-  top: -0.6rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 0.75rem;
-  border: none;
-  background-color: #5447C8;
-  color: #FFFFFF;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: background-color ease-in-out 0.1s;
+.main .main__new-post label .tox-tinymce {
+  width: calc(40vw + 2rem);
 }
-.main .main__new-post label .main__new-post-button:focus, .main .main__new-post label .main__new-post-button:hover {
-  background-color: #302782;
+@media screen and (max-width: 1100px) {
+  .main .main__new-post label .tox-tinymce {
+    width: calc(70vw + 2rem);
+  }
 }
 .main .post-card {
   width: calc(40vw - 2rem);

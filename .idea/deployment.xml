@@ -1,14 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="Zlab" preserveTimestamps="false" remoteFilesAllowedToDisappearOnAutoupload="false">
-    <serverData>
-      <paths name="Zlab">
-        <serverdata>
-          <mappings>
-            <mapping deploy="/DF-REMAKE" local="$PROJECT_DIR$" web="/DF-REMAKE" />
-          </mappings>
-        </serverdata>
-      </paths>
-    </serverData>
-  </component>
+  <component name="PublishConfigData" preserveTimestamps="false" remoteFilesAllowedToDisappearOnAutoupload="false" />
 </project>
