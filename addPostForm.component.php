@@ -2,7 +2,7 @@
         referrerpolicy="origin"></script>
 
 
-<form class="main__new-post" method="post">
+<form class="main__new-post" method="get">
     <label class="main__new-post-add">
         <input type="text" placeholder="Přidej příspěvek" class="main__new-post-input"/>
         <button class="main__new-post-button button" type="button"><i class="fa-solid fa-plus"></i></button>
@@ -10,16 +10,35 @@
     <div class="main__new-post-textarea hidden">
         <h2 class="new-post-title">Nový příspěvek</h2>
         <label>
-            <textarea name="content" required></textarea>
+            <textarea name="content"></textarea>
         </label>
         <div class="main__new-post-controls">
             <label>
-                <input type="text" name="title" placeholder="Název příspěvku" class="main__new-post-title" maxlength="50" required>
+                <input type="text" name="title" placeholder="Název příspěvku" class="main__new-post-title"
+                       maxlength="50" required>
             </label>
-            <label class="buttons">
-                <button type="button" class="button button--close"><i class="fa-regular fa-circle-xmark"></i></button>
-                <button type="submit" class="button"><i class="fa-solid fa-plus"></i></button>
-            </label>
+            <div class="main__new-post-footer">
+                <label>
+                    <select name="topic">
+                        <?php
+                        if (!isset($topic)) {
+                            require_once 'start.config.php';
+                        }
+
+                        $topics = $topic->getAllTopics();
+
+                        foreach ($topics as $tempTopic) { ?>
+                            <option value="<?= $tempTopic->id ?>"> <?= $tempTopic->title ?> </option>
+                            <?php
+                        }
+                        ?>
+                    </select>
+                </label>
+                <div class="buttons">
+                    <button type="button" class="button button--close"><i class="fa-regular fa-circle-xmark"></i></button>
+                    <button type="submit" class="button" name="submit"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
         </div>
     </div>
 </form>
@@ -53,9 +72,7 @@
     })
 
     newPostTitleInput.addEventListener('input', () => {
-        console.log(newPostTitleInput.textLength)
-
-        if(newPostTitleInput.textLength < 1){
+        if (newPostTitleInput.textLength < 1) {
             newPostTitle.innerHTML = 'Nový příspěvek'
             return
         }

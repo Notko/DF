@@ -65,4 +65,33 @@ class postController
             return [];
         }
     }
+
+    /**
+     *
+     * Add new post
+     * @param int $userId
+     * @param string $title
+     * @param string $content
+     * @param int $topicId
+     * @return array
+     *
+     */
+    public function addPost(int $userId, string $title, string $content, int $topicId): array
+    {
+        if (!($userId && $title && $content && $topicId)) return ['status' => 422, 'message' => 'Prosím vyplňte všechna pole!'];
+
+        try {
+            $stmt = $this->conn->prepare("INSERT INTO df_posts (heading, content, users_id, topics_id) VALUES (:heading, :content, :users_id, :topics_id)");
+            $stmt->bindParam('heading', $topic);
+            $stmt->bindParam('content', $content);
+            $stmt->bindParam('users_id', $userId);
+            $stmt->bindParam('topics_id', $topicId);
+            $stmt->execute();
+            $stmt->fetchAll(PDO::FETCH_OBJ);
+
+            return ['status' => 200];
+        } catch (PDOException $e) {
+            return ['status' => 500];
+        }
+    }
 }

@@ -1,8 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 if(!isset($topic)){
     require_once '../start.config.php';
 }
@@ -10,6 +6,6 @@ if(!isset($topic)){
 $topics = $topic->getAllTopics();
 
 
-foreach ($topics as $topic) {
-    echo '<li class="nav__item--dropdown-item"><a href="topic.php?topic_id=' . $topic->id  . '">' . $topic->title . ' (' . $topic->postsCount . ')' . '</a></li>';
+foreach ($topics as $tempTopic) {
+    echo '<li class="nav__item--dropdown-item"><a href="topic.php?topic_id=' . $tempTopic->id  . '">' . $tempTopic->title . ' (' . $tempTopic->postsCount . ')' . '</a></li>';
 }
