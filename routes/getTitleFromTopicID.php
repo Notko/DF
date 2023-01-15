@@ -1,5 +1,8 @@
 <?php
 if(!isset($_GET['id'])) return;
+if(!isset($topic)){
+    require_once '../start.config.php';
+}
 
 $topic = $topic->getTitleFromID($_GET['id']);
 

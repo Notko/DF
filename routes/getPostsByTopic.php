@@ -5,6 +5,10 @@ error_reporting(E_ALL);
 
 if(!isset($_GET['topic_id'])) return;
 
+if(!isset($post)){
+    require_once '../start.config.php';
+}
+
 $posts = $post->getPostsByTopic(intval($_GET['topic_id']));
 
 foreach ($posts as $post) {

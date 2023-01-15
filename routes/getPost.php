@@ -1,7 +1,9 @@
 <?php
 if(!isset($_GET['id'])) return;
 
-require_once "controllers/postController.class.php";
+if(!isset($post)){
+    require_once '../start.config.php';
+}
 $posts = $post->getPost(intval($_GET['id']));
 
 foreach ($posts as $post) {
