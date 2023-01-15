@@ -23,14 +23,7 @@ include "navigation.component.php"
 ?>
 
 <main class="main">
-    <?php if (isset($_SESSION['username'])) { ?>
-        <form class="main__new-post">
-            <label>
-                <input type="text" placeholder="Přidej příspěvek" class="main__new-post-input"/>
-                <button class="main__new-post-button"><i class="fa-solid fa-plus"></i></button>
-            </label>
-        </form>
-    <?php } ?>
+    <?php if (isset($_SESSION['username'])) include 'addPostForm.component.php'; ?>
     <?php include 'routes/getPostsByTopic.php'; ?>
 </main>
 
