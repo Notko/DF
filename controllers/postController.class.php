@@ -81,8 +81,8 @@ class postController
         if (!($userId && $title && $content && $topicId)) return ['status' => 422, 'message' => 'Prosím vyplňte všechna pole!'];
 
         try {
-            $stmt = $this->conn->prepare("INSERT INTO df_posts (heading, content, users_id, topics_id) VALUES (:heading, :content, :users_id, :topics_id)");
-            $stmt->bindParam('heading', $topic);
+            $stmt = $this->conn->prepare("INSERT INTO df_posts (heading, content, users_id, topics_id, date_created, date_updated) VALUES (:heading, :content, :users_id, :topics_id, CURRENT_DATE, CURRENT_DATE)");
+            $stmt->bindParam('heading', $title);
             $stmt->bindParam('content', $content);
             $stmt->bindParam('users_id', $userId);
             $stmt->bindParam('topics_id', $topicId);
@@ -91,7 +91,7 @@ class postController
 
             return ['status' => 200];
         } catch (PDOException $e) {
-            return ['status' => 500];
+            return ['status' => 500, 'message' => 'Něco se nepovedlo.'];
         }
     }
 }

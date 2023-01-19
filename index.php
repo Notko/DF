@@ -11,7 +11,7 @@ require_once 'start.config.php';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
           integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href="templates/style.css">
+    <link rel="stylesheet" href="styles/style.css">
     <title>Diskuzní Fórum</title>
 </head>
 <body>
@@ -21,6 +21,12 @@ include "navigation.component.php"
 ?>
 
 <main class="main">
+    <?php
+    if (isset($error)) {
+        echo '<span class="toast toast--danger">' . $error . '</span>';
+    }
+//    echo "<pre>" . htmlspecialchars(json_encode(get_defined_vars(), JSON_PRETTY_PRINT)) . "</pre>"
+    ?>
     <?php if (isset($_SESSION['username'])) include 'addPostForm.component.php'; ?>
     <?php include 'routes/getPosts.php' ?>
 </main>
@@ -30,5 +36,5 @@ include "navigation.component.php"
 include "footer.component.php"
 ?>
 </body>
-<!--<script src="js/getPosts.js"></script>-->
+
 </html>

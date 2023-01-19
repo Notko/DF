@@ -68,6 +68,7 @@ input, select {
   cursor: default;
   user-select: none;
   animation: fadein 0.5s;
+  z-index: 99999;
 
   @keyframes fadein {
     from {

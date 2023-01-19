@@ -1,8 +1,26 @@
+<?php
+
+if (isset($_POST['submit'])) {
+    if (!isset($post)) {
+        require_once 'start.config.php';
+    }
+    $response = $post->addPost(intval($_SESSION['userID']), $_POST['title'], $_POST['content'], intval($_POST['topic']));
+    if ($response['status'] == 200) {
+        header('Location: index.php');
+    }
+    if ($response['status'] == 500) {
+        $error = $response['message'];
+    }
+}
+
+
+
+?>
+
 <script src="https://cdn.tiny.cloud/1/krkbhjvr0o3y8nlvlyvnthisihpfxmn5xytnqtkh88q464a3/tinymce/6/tinymce.min.js"
         referrerpolicy="origin"></script>
 
-
-<form class="main__new-post" method="get">
+<form class="main__new-post" method="post">
     <label class="main__new-post-add">
         <input type="text" placeholder="Přidej příspěvek" class="main__new-post-input"/>
         <button class="main__new-post-button button" type="button"><i class="fa-solid fa-plus"></i></button>
@@ -35,7 +53,8 @@
                     </select>
                 </label>
                 <div class="buttons">
-                    <button type="button" class="button button--close"><i class="fa-regular fa-circle-xmark"></i></button>
+                    <button type="button" class="button button--close"><i class="fa-regular fa-circle-xmark"></i>
+                    </button>
                     <button type="submit" class="button" name="submit"><i class="fa-solid fa-plus"></i></button>
                 </div>
             </div>

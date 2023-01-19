@@ -27,6 +27,11 @@ class userController
         if (!($name && $surname && $username && $email && $password && $password_confirm)) return ['status' => 422, 'message' => 'Prosím vyplňte všechna pole!'];
         if ($password != $password_confirm) return ['status' => 422, 'message' => 'Hesla se neshodují!'];
 
+        /*
+         * TODO
+         * Validace znaků
+         * */
+
         try {
             $stmt = $this->conn->prepare('SELECT COUNT(*) AS items FROM df_users WHERE username = :username');
             $stmt->bindParam('username', $username);
