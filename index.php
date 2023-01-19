@@ -25,7 +25,6 @@ include "navigation.component.php"
     if (isset($error)) {
         echo '<span class="toast toast--danger">' . $error . '</span>';
     }
-//    echo "<pre>" . htmlspecialchars(json_encode(get_defined_vars(), JSON_PRETTY_PRINT)) . "</pre>"
     ?>
     <?php if (isset($_SESSION['username'])) include 'addPostForm.component.php'; ?>
     <?php include 'routes/getPosts.php' ?>
