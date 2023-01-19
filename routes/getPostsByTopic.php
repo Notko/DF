@@ -21,10 +21,10 @@ foreach ($posts as $post) {
             </div>
         </div>
         <div class="post-card__content">' . $post->content . '</div>
-        <a href="#" class="post-card__reply">
+        <button type="button" class="post-card__reply">
             <i class="fa-solid fa-comment"></i>
-            <span>Odpovědět</span>
-        </a>
+            <span>Komentáře</span>
+        </button>
     </article>
     ';
 }
