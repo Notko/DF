@@ -17,16 +17,16 @@
   background: #302782;
 }
 
-li {
-  list-style: none;
-}
-
 html, body {
   position: relative;
   margin: 0;
   min-height: 100vh;
   background: #d4cff1;
   background: linear-gradient(331deg, #d4cff1 0%, #f6fafd 100%);
+}
+
+li {
+  list-style: none;
 }
 
 input, button, select {
@@ -345,6 +345,9 @@ input:active, input:focus, select:active, select:focus {
   background-color: #FFFFFF;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.005);
 }
+.main .post-card.show-replies {
+  max-height: initial;
+}
 .main .post-card:last-of-type {
   margin-top: 4rem;
 }
@@ -416,19 +419,25 @@ input:active, input:focus, select:active, select:focus {
   padding: 0.5rem 1rem;
   border-radius: 0.75rem;
   transition: background-color ease-in-out 0.1s;
+  color: #5447C8;
 }
 .main .post-card .post-card__reply i {
   color: #b0b0b0;
   margin-right: 0.5rem;
+  transition: color ease-in-out 0.1s;
 }
 .main .post-card .post-card__reply span {
   color: #303030;
   font-size: 1.125rem;
   font-weight: 300;
+  transition: color ease-in-out 0.1s;
 }
 .main .post-card .post-card__reply:hover, .main .post-card .post-card__reply:focus {
   background-color: #ececec;
   outline: none;
+}
+.main .post-card .post-card__reply:hover i, .main .post-card .post-card__reply:hover span, .main .post-card .post-card__reply:focus i, .main .post-card .post-card__reply:focus span {
+  color: #5447C8;
 }
 
 .footer {

@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap');
+
+$color--primary: #5447C8;
+$color--white: #FFFFFF;
+$color--dark: rgb(48, 48, 48);
+$color--danger: #DC3545;
+$font-family: 'Source Sans Pro', sans-serif;
+
+:root {
+  font-size: 16px;
+  font-family: $font-family;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  background-color: darken($color--white, 10%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color--primary;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: darken($color--primary, 20%);
+}
+
+html, body {
+  position: relative;
+  margin: 0;
+  min-height: 100vh;
+  background: rgb(212, 207, 241);
+  background: linear-gradient(331deg, rgba(212, 207, 241, 1) 0%, rgba(246, 250, 253, 1) 100%);
+}
