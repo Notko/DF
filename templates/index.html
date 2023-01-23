@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
           integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="styles/style.css">
     <title>Diskuzní Fórum</title>
 </head>
 <body>
@@ -71,7 +71,7 @@
     <form class="main__new-post">
         <label>
             <input type="text" placeholder="Přidej příspěvek" class="main__new-post-input"/>
-            <button class="main__new-post-button"><i class="fa-solid fa-plus"></i></button>
+            <button class="main__new-post-button button"><i class="fa-solid fa-plus"></i></button>
         </label>
     </form>
     <article class="post-card">
@@ -128,7 +128,7 @@
             <span>Odpovědět</span>
         </a>
     </article>
-    <article class="post-card">
+    <article class="post-card show-replies">
         <a href="#" class="post-card__title"><h2>Lecture Rescheduling</h2></a>
         <div class="post-card__header">
             <div class="post-card__info">
@@ -150,10 +150,102 @@
             muffin. I
             love marzipan...
         </div>
-        <a href="#" class="post-card__reply">
+        <button type="button" class="post-card__reply">
             <i class="fa-solid fa-comment"></i>
-            <span>Odpovědět</span>
-        </a>
+            <span>Komentáře (2)</span>
+        </button>
+        <div class="post-card__comments-wrapper" id="comment">
+            <h3>Komentáře (2)</h3>
+            <form class="post-card-comment-form">
+                <label>
+                    <textarea class="post-card-comment-textarea" placeholder="Přidejte komentář" name="content"></textarea>
+                    <input type="hidden" name="id" value="0">
+                    <button type="submit" class="button" name="comment-submit">
+                        <i class="fa-regular fa-paper-plane"></i>
+                    </button>
+                </label>
+            </form>
+            <div class="post-card-comment-wrapper">
+                <div class="post-card__comment">
+                    <div class="post-card-comment__header">
+                        <div class="post-card-comment__info">
+                            <span class="post-card-comment__author">Elisabeth May</span>
+                            <span class="post-card-comment__date">10. Prosince 2022</span>
+                        </div>
+                    </div>
+                    <div class="post-card-comment-content">
+                        Caramels dessert chocolate cake marzipan soufflé pastry gingerbread cupcake sugar plum. Bear
+                        claw cookie sweet jelly-o chocolate cake. Sugar plum muffin powder fruitcake jelly beans dessert
+                        toffee sweet dragée. Sugar plum dessert pie cupcake donut shortbread jelly beans lemon drops.
+                        Dragée chocolate tiramisu gingerbread carrot cake toffee.
+                    </div>
+                </div>
+            </div>
+            <div class="post-card-comment-wrapper">
+                <div class="post-card__comment">
+                    <div class="post-card-comment__header">
+                        <div class="post-card-comment__info">
+                            <span class="post-card-comment__author">Elisabeth May</span>
+                            <span class="post-card-comment__date">10. Prosince 2022</span>
+                        </div>
+                    </div>
+                    <div class="post-card-comment-content">
+                        Caramels dessert chocolate cake marzipan soufflé pastry gingerbread cupcake sugar plum. Bear
+                        claw cookie sweet jelly-o chocolate cake. Sugar plum muffin powder fruitcake jelly beans dessert
+                        toffee sweet dragée. Sugar plum dessert pie cupcake donut shortbread jelly beans lemon drops.
+                        Dragée chocolate tiramisu gingerbread carrot cake toffee.
+                    </div>
+                    <div class="post-card-comment-wrapper post-card-comment-wrapper--reply">
+                        <div class="post-card__comment">
+                            <div class="post-card-comment__header">
+                                <div class="post-card-comment__info">
+                                    <span class="post-card-comment__author">Elisabeth May</span>
+                                    <span class="post-card-comment__date">10. Prosince 2022</span>
+                                </div>
+                            </div>
+                            <div class="post-card-comment-content">
+                                Caramels dessert chocolate cake marzipan soufflé pastry gingerbread cupcake sugar plum. Bear
+                                claw cookie sweet jelly-o chocolate cake. Sugar plum muffin powder fruitcake jelly beans dessert
+                                toffee sweet dragée. Sugar plum dessert pie cupcake donut shortbread jelly beans lemon drops.
+                                Dragée chocolate tiramisu gingerbread carrot cake toffee.
+                            </div>
+                            <div class="post-card-comment-wrapper post-card-comment-wrapper--reply">
+                                <div class="post-card__comment">
+                                    <div class="post-card-comment__header">
+                                        <div class="post-card-comment__info">
+                                            <span class="post-card-comment__author">Elisabeth May</span>
+                                            <span class="post-card-comment__date">10. Prosince 2022</span>
+                                        </div>
+                                    </div>
+                                    <div class="post-card-comment-content">
+                                        Caramels dessert chocolate cake marzipan soufflé pastry gingerbread cupcake sugar plum. Bear
+                                        claw cookie sweet jelly-o chocolate cake. Sugar plum muffin powder fruitcake jelly beans dessert
+                                        toffee sweet dragée. Sugar plum dessert pie cupcake donut shortbread jelly beans lemon drops.
+                                        Dragée chocolate tiramisu gingerbread carrot cake toffee.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-card-comment-wrapper post-card-comment-wrapper--reply">
+                        <div class="post-card__comment">
+                            <div class="post-card-comment__header">
+                                <div class="post-card-comment__info">
+                                    <span class="post-card-comment__author">Elisabeth May</span>
+                                    <span class="post-card-comment__date">10. Prosince 2022</span>
+                                </div>
+                            </div>
+                            <div class="post-card-comment-content">
+                                Caramels dessert chocolate cake marzipan soufflé pastry gingerbread cupcake sugar plum. Bear
+                                claw cookie sweet jelly-o chocolate cake. Sugar plum muffin powder fruitcake jelly beans dessert
+                                toffee sweet dragée. Sugar plum dessert pie cupcake donut shortbread jelly beans lemon drops.
+                                Dragée chocolate tiramisu gingerbread carrot cake toffee.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </article>
 </main>
 <footer class="footer">

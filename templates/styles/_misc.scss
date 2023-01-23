@@ -2,7 +2,7 @@ li {
   list-style: none;
 }
 
-input, button, select {
+input, button, select, textarea {
   font-family: $font-family;
   font-size: 1rem;
 }
@@ -12,16 +12,19 @@ button {
   cursor: pointer;
 }
 
-input, select {
+input, select, textarea {
   background-color: darken($color--white, 2.5%);
   border-radius: .75rem;
   font-size: 1rem;
-  padding: 1rem;
   border: none;
 
   &:active, &:focus {
     outline: 1px solid lighten($color--primary, 25%);
   }
+}
+
+input, select {
+  padding: 1rem;
 }
 
 .hidden {
