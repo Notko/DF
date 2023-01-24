@@ -50,10 +50,10 @@ class commentController{
      *
      * Returns count of comments on post
      * @param $postId int
-     * @return array|string
+     * @return string
      *
      */
-    public function getCommentCount(int $postId): array|string
+    public function getCommentCount(int $postId): string
     {
         try {
             $stmt = $this->conn->prepare("SELECT COUNT(id) AS comment_count FROM df_comments WHERE posts_id = :id");
@@ -62,7 +62,7 @@ class commentController{
             $response = $stmt->fetchAll(PDO::FETCH_OBJ);
             return $response[0]->comment_count;
         } catch (PDOException $e) {
-            return [];
+            return "";
         }
     }
 
@@ -70,10 +70,10 @@ class commentController{
      *
      * Returns count of replies on comment
      * @param $commentId int
-     * @return array|string
+     * @return string
      *
      */
-    public function getRepliesCount(int $commentId): array|string
+    public function getRepliesCount(int $commentId): string
     {
         try {
             $stmt = $this->conn->prepare("SELECT COUNT(id) AS replies_count FROM df_comments WHERE comments_id = :id");
@@ -82,7 +82,7 @@ class commentController{
             $response = $stmt->fetchAll(PDO::FETCH_OBJ);
             return $response[0]->replies_count;
         } catch (PDOException $e) {
-            return [];
+            return "";
         }
     }
 }
