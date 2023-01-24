@@ -35,5 +35,5 @@ include "navigation.component.php"
 include "footer.component.php"
 ?>
 </body>
-
+<script src="js/getComments.js"></script>
 </html>

@@ -36,6 +36,6 @@ include "footer.component.php"
 
 </body>
 
-<!--<script src="js/getPost.js"></script>-->
+<script src="js/getComments.js"></script>
 
 </html>

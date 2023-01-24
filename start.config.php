@@ -10,3 +10,6 @@ $topic = new topicController($conn);
 
 require_once 'controllers/postController.class.php';
 $post = new postController($conn);
+
+require_once 'controllers/commentController.class.php';
+$comment = new commentController($conn);

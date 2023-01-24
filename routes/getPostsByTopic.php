@@ -21,9 +21,9 @@ foreach ($posts as $post) {
             </div>
         </div>
         <div class="post-card__content">' . $post->content . '</div>
-        <button type="button" class="post-card__reply">
-            <i class="fa-solid fa-comment"></i>
-            <span>Komentáře</span>
+        <button type="button" class="post-card__reply" data-post-id="' . $post->post_id . '">
+            <i class="fa-solid fa-chevron-down"></i>
+            <span>Komentáře (' . $comment->getCommentCount(intval($post->post_id)) . ')</span>
         </button>
     </article>
     ';
