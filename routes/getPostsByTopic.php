@@ -9,8 +9,8 @@ $posts = $post->getPostsByTopic(intval($_GET['topic_id']));
 
 foreach ($posts as $post) {
     echo '
-        <article class="post-card">
-        <a href="post.php?id=' . $post->id . '" class="post-card__title"><h2>' . $post->heading . '</h2></a>
+        <article class="post-card" data-post-card-id="' . $post->post_id . '">
+        <a href="post.php?id=' . $post->post_id . '" class="post-card__title"><h2>' . $post->heading . '</h2></a>
         <div class="post-card__header">
             <div class="post-card__info">
                 <span class="post-card__author">' . (($post->username) ?: "Anonymní uživatel") . '</span>
