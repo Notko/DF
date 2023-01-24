@@ -267,6 +267,17 @@
             top: -2rem;
           }
         }
+
+        &--reply {
+          margin-top: 1rem;
+          margin-bottom: .5rem;
+
+          label {
+            .post-card-comment-textarea {
+              height: 2rem;
+            }
+          }
+        }
       }
 
       .post-card-comment-wrapper {
@@ -303,9 +314,41 @@
           }
         }
 
+        .post-card-comment__show-replies {
+          text-decoration: none;
+          background-color: darken($color--white, 5%);
+          padding: .5rem 1rem;
+          border-radius: .75rem;
+          transition: background-color ease-in-out .1s;
+          color: $color--primary;
+          margin-top: .5rem;
+
+          i {
+            color: lighten($color--dark, 50%);
+            margin-right: .5rem;
+            transition: color ease-in-out .1s;
+          }
+
+          span {
+            color: $color--dark;
+            font-size: 1.125rem;
+            font-weight: 300;
+            transition: color ease-in-out .1s;
+          }
+
+          &:hover, &:focus {
+            i, span {
+              color: $color--primary;
+            }
+
+            background-color: darken($color--white, 9%);
+            outline: none;
+          }
+        }
+
         &--reply {
 
-          &::before{
+          &::before {
             content: '';
             display: block;
             background-color: $color--primary;
