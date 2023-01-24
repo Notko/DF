@@ -15,6 +15,8 @@ const getComments = (id, button) => {
                 button.getElementsByClassName('fa-solid')[0].classList.remove('fa-chevron-down')
                 button.getElementsByClassName('fa-solid')[0].classList.add('fa-chevron-up')
             }
+
+            document.querySelector('[data-post-card-id="' + id + '"]').scrollIntoView({behavior: "smooth"})
         }
     }
     xmlhttp.open('GET', 'routes/getComments.php?id=' + id, true)
