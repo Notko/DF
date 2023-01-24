@@ -12,7 +12,8 @@ echo
 '
 <div class="post-card__comments-wrapper" id="comment" data-comment-wrapper-id="' . $_GET['id'] . '">
     <h3>Komentáře (' . $comment->getCommentCount(intval($_GET['id'])) . ')</h3>
-    <form class="post-card-comment-form">
+    '.
+    (isset($_SESSION['username']) ? '<form class="post-card-comment-form">
         <label>
             <textarea class="post-card-comment-textarea" placeholder="Přidejte komentář" name="content"></textarea>
             <input type="hidden" name="id" value="0">
@@ -20,8 +21,8 @@ echo
                 <i class="fa-regular fa-paper-plane"></i>
             </button>
         </label>
-    </form>
-    <div class="post-card-comment-wrapper">
+    </form>' : '') .
+    '<div class="post-card-comment-wrapper">
 ';
 
 foreach ($comments as $tempComment) {
@@ -38,7 +39,7 @@ foreach ($comments as $tempComment) {
         <div class="post-card-comment-content">
             ' . $tempComment->content . '
         </div>
-        <form class="post-card-comment-form post-card-comment-form--reply">
+        ' . (isset($_SESSION['username']) ? '        <form class="post-card-comment-form post-card-comment-form--reply">
             <label>
                 <textarea class="post-card-comment-textarea" placeholder="Přidejte komentář" name="content"></textarea>
                 <input type="hidden" name="comment-id" value="' . $tempComment->id . '">
@@ -46,7 +47,7 @@ foreach ($comments as $tempComment) {
                     <i class="fa-regular fa-paper-plane"></i>
                 </button>
             </label>
-        </form>
+        </form>' : '') . '
         ' . ($replies > 0 ? '
         <button type="button" class="post-card-comment__show-replies" data-comment-id="' . $tempComment->id . '">
             <i class="fa-solid fa-chevron-down"></i>
